@@ -22,8 +22,12 @@ const HEROES: Hero[] = [
   selector: 'app-root',
   //templateUrl: './app.component.html',
   template: `<h1>{{title}}</h1>
-             <h2>{{hero.name}} details!</h2>
-              <div><label>id: </label>{{ hero.id }}</div>
+              <h2>My Heroes</h2>
+              <ul>
+                <li *ngFor="let hero of heroes">
+                  <span class="badge">{{hero.id}}</span> {{hero.name}}
+                </li>
+              </ul>
                <div>
                 <label>name: </label>
                 <input [(ngModel)]="hero.name" placeholder="name">
